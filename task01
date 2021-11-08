@@ -1,0 +1,16 @@
+import cv2
+
+
+t1=cv2.imread('Task01.jpg')
+cv2.imshow('new window',t1)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+t1_grey = cv2.cvtColor(t1,cv2.COLOR_BGR2GRAY)
+
+t1_blur= cv2.GaussianBlur(t1_grey,(3,3),0)
+
+edges = cv2.Canny(image=t1_blur, threshold1=50, threshold2=200)
+cv2.imshow('new window',edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
